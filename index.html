@@ -5,12 +5,31 @@
 	<title>Todo Material</title>
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
 </head>
-<body>
+<body ng-app="todoMaterial">
+	<div ng-controller="TodoController">
+		<h1>Todo list</h1>
+
+		<ul>
+			<li ng-repeat="todo in todos">
+				{{todo}} <button ng-click="removeTodo(todo)">Done</button>
+			</li>
+		</ul>
+		<br>
+		<form ng-submit="addTodo()">
+			<label for=""> Add a new task</label>
+			<input type="text" ng-model="newTodo">
+		</form>
+	</div>
+
 	
 
 	<!-- vendor -->
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+	<!-- custom -->
+	<script src="app/main.js"></script>
+	<script src="app/controllers.js"></script>
 </body>
 </html>

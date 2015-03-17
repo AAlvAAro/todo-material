@@ -15,6 +15,8 @@ controller('TodoController', ['$scope', function  ($scope) {
 	$scope.addTodo = function  () {
 		$scope.todos.push($scope.newTodo);
 		localStorage.setItem($scope.newTodo, $scope.newTodo);
+
+		$scope.newTodo = "";
 	}
 
 	$scope.removeTodo = function  (value) {

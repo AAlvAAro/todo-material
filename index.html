@@ -4,22 +4,34 @@
 	<meta charset="UTF-8">
 	<title>Todo Material</title>
 	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body ng-app="todoMaterial">
-	<div ng-controller="TodoController">
-		<h1>Todo list</h1>
-
-		<ul>
-			<li ng-repeat="todo in todos">
-				{{todo}} <button ng-click="removeTodo(todo)">Done</button>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="/" class="brand-logo">Todo Material</a>
+			<ul class="right hide-on-med-and-down">
+				<li></li>
+			</ul>
+		</div>
+	</nav>	
+	<div class="container" ng-controller="TodoController">
+		<h5>Current tasks</h5>
+		<ul class="collection">
+			<li class="collection-item" ng-repeat="todo in todos">
+				{{todo}} <a class="waves-effect waves-light btn right btn-mini" ng-click="removeTodo(todo)">Done</a>
 			</li>
 		</ul>
 		<br>
-		<form ng-submit="addTodo()">
-			<label for=""> Add a new task</label>
-			<input type="text" ng-model="newTodo">
-		</form>
+		<div class="row">
+			<form class="col s12" ng-submit="addTodo()">
+				<div class="input-field col s6">
+					<label for=""> Add a new task</label>
+					<input class="validate" type="text" ng-model="newTodo">
+				</div>
+			</form>
+		</div>
 	</div>
 
 	

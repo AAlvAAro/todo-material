@@ -7,7 +7,7 @@ A simple todo list application build with Angular.JS, localStorage and Material 
 ```bash
 git clone https://github.com/AAlvAAro/todo-material
 ```
- * Install the dependencias via bower
+ * Install the dependencies via bower
 
 ```bash
 bower install

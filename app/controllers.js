@@ -25,6 +25,6 @@ controller('TodoController', ['$scope', function  ($scope) {
 
 	$scope.removeTodo = function  (value) {
 		$scope.todos.splice($scope.todos.indexOf(value, 1));
-		localStorage.removeItem(value);
+		localStorage.removeItem("tm_" + value);
 	}
 }]);
